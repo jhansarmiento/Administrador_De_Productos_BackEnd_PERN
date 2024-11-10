@@ -1,16 +1,9 @@
 import express from "express";
+import router from "./router";
 
 const  server = express()
 
-// Routing - Crea el servidor
-server.get('/', (req, res) => {
-    
-    const datos = [
-        { id: 1, nombre: 'Jhan'},
-        { id: 2, nombre: 'Carlos'},
-
-    ]
-    res.json(datos)
-})
+// .use() es un método que engloba todos los verbos HTTP
+server.use('/api/products', router)
 
 export default server
