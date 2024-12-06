@@ -1,4 +1,5 @@
 import { Router } from 'express'
+import { CreateProduct } from './handlers/product'
 
 const router = Router()
 
@@ -7,10 +8,8 @@ router.get('/', (req, res) => {
     
     res.json('Desde GET')
 })
-router.post('/', (req, res) => {
-    
-    res.json('Desde POST')
-})
+router.post('/', CreateProduct)
+
 router.put('/', (req, res) => {
     
     res.json('Desde PUT')
