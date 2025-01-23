@@ -80,3 +80,17 @@ export const updateAvailability = async (req : Request, res : Response) => {
         console.log(error)
     }
 }
+
+export const deleteProduct = async (req : Request, res : Response) => {
+    const { id } = req.params
+    const product = await Product.findByPk(id)
+
+    if(!product){
+        return res.status(404).json({
+            error: 'Product Not Found'
+        })
+    }
+
+    await product.destroy()
+    res.json({ data : "Product Deleted"})
+}
