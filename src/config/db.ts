@@ -1,5 +1,6 @@
 import { Sequelize } from 'sequelize-typescript'
 import dotenv from 'dotenv'
+
 dotenv.config()
 
 // Connects the app with the database
