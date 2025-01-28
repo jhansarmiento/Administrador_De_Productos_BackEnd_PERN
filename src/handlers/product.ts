@@ -10,6 +10,7 @@ export const getProducts = async (req : Request, res : Response) => {
     })
     res.json({ data : products })
 }
+
 export const getProductById = async (req : Request, res : Response) => {
     const { id } = req.params
     const product = await Product.findByPk(id)
@@ -43,6 +44,7 @@ export const updateProduct = async (req : Request, res : Response) => {
 
     res.json({ data : product })
 }
+
 export const updateAvailability = async (req : Request, res : Response) => {
     const { id } = req.params
     const product = await Product.findByPk(id)
