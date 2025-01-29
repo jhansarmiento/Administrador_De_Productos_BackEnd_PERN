@@ -29,6 +29,24 @@ const router = Router()
  *                      example: true
 */
 
+/**
+ * @swagger
+ * /api/products:
+*       get:
+*           summary: Get the list of products
+*           tags:
+*               - Products
+*           description: Returns the list of products
+*           responses:
+*               200:
+*                   description: Successful response
+*                   content:
+*                       application/json:
+*                           schema: 
+*                               type: array
+*                               items:
+*                                   $ref: '#/components/schemas/Product'
+ */
 
 // Routing - Crea el servidor
 router.get('/', getProducts)
