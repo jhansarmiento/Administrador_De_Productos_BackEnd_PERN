@@ -4,6 +4,31 @@ import { createProduct, deleteProduct, getProductById, getProducts, updateAvaila
 import { handleInputErrors } from './middleware'
 
 const router = Router()
+/** 
+ * @swagger
+ * components:
+ *      schemas:
+ *          Product:
+ *              type: object
+ *              properties: 
+ *                  id:
+ *                      type: integer
+ *                      description: The Product ID
+ *                      example: 1
+ *                  name:
+ *                      type: string
+ *                      description: The Product Name
+ *                      exmple: Ultrawide Monitor 34 inch
+ *                  price:
+ *                      type: integer
+ *                      description: The Product Price
+ *                      example: 300
+ *                  availability:
+ *                      type: boolean
+ *                      description: The Product Availability
+ *                      example: true
+*/
+
 
 // Routing - Crea el servidor
 router.get('/', getProducts)
