@@ -78,6 +78,7 @@ router.get('/', getProducts)
  *          404:
  *              description: Not Found
  */
+
 router.get('/:id', 
     param('id').isInt().withMessage('Not Valid ID'),
     handleInputErrors,
@@ -107,7 +108,11 @@ router.get('/:id',
  *                              example: 199
  *      responses:
  *          201:
- *              description: Product Created Successfully
+ *              description: Successful response
+ *              content:
+ *                  application/json:
+ *                      schema: 
+ *                          $ref: '#/components/schemas/Product'
  *          400: 
  *              description: Bad request - Invalid Input Data
  */ 
@@ -123,6 +128,49 @@ router.post('/',
     handleInputErrors,
     createProduct)
 
+/**
+ * @swagger
+ * /api/products/{id}:
+ *  put:
+ *      summary: Updates a product with user input
+ *      tags:
+ *          - Products
+ *      description: Returns the updated product
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          description: The ID of the product to retrieve
+ *          required: true
+ *          schema: 
+ *              type: integer
+ *      requestBody:
+ *          required: true
+ *          content:
+ *              application/json:
+ *                  schema:
+ *                      type: object
+ *                      properties:
+ *                          name:
+ *                              type: string
+ *                              example: "Ultrawide Monitor 34 inch"
+ *                          price:
+ *                              type: integer
+ *                              example: 199
+ *                          availability:
+ *                              type: boolean
+ *                              example: true
+ *      responses: 
+ *          200:
+ *              description: Successful response
+ *              content:
+ *                  application/json:
+ *                      schema: 
+ *                          $ref: '#/components/schemas/Product'
+ *          400:
+ *              description: Bad Request - Not Valid ID or Invalid Input Data
+ *          404:
+ *              description: Product Not Found
+ */
 router.put('/:id', 
     param('id').isInt().withMessage('Not Valid ID'),
     body('name')
