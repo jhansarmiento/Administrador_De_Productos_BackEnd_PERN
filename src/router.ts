@@ -84,6 +84,34 @@ router.get('/:id',
     getProductById
 )
 
+/**
+ * @swagger
+ * /api/products:
+ *  post:
+ *      summary: Creates a new product
+ *      tags:
+ *          - Products
+ *      description: Returns a new record in the database
+ *      requestBody:
+ *          required: true
+ *          content:
+ *              application/json:
+ *                  schema:
+ *                      type: object
+ *                      properties:
+ *                          name:
+ *                              type: string
+ *                              example: "Ultrawide Monitor 34 inch"
+ *                          price:
+ *                              type: integer
+ *                              example: 199
+ *      responses:
+ *          201:
+ *              description: Product Created Successfully
+ *          400: 
+ *              description: Bad request - Invalid Input Data
+ */ 
+
 router.post('/', 
     //Validación
     body('name')
