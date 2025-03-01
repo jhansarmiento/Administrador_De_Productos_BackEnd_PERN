@@ -1,17 +1,11 @@
 import express from "express";
 import colors from "colors";
-<<<<<<< HEAD
 import cors, { CorsOptions } from 'cors'
-=======
->>>>>>> bcdb3c7613191b893aa2056d3a4c66336c5775d2
 import swaggerUi from "swagger-ui-express";
 import swaggerSpec, {swaggerUiOptions} from "./config/swagger";
 import router from "./router";
 import db from "./config/db";
-<<<<<<< HEAD
 import morgan from "morgan";
-=======
->>>>>>> bcdb3c7613191b893aa2056d3a4c66336c5775d2
 
 
 
@@ -32,7 +26,6 @@ connectDB()
 // Instancia de Express
 const  server = express()
 
-<<<<<<< HEAD
 // Permitir Conexiones
 const corsOptions : CorsOptions = {
     origin: function(origin, callback) {
@@ -51,11 +44,6 @@ server.use(express.json())
 
 server.use(morgan('dev'))
 
-=======
-// Leer datos de formularios
-server.use(express.json())
-
->>>>>>> bcdb3c7613191b893aa2056d3a4c66336c5775d2
 // .use() es un método que engloba todos los verbos HTTP
 server.use('/api/products', router)
 
