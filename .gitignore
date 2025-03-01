@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 .env
 node_modules/
 package-lock.json
 .DS_Store
 dist
+=======
+node_modules/
+dist/
+.env
+>>>>>>> bcdb3c7613191b893aa2056d3a4c66336c5775d2
